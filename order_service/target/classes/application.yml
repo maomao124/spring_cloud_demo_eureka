@@ -31,7 +31,7 @@ eureka:
 logging:
  # 日志输出到文件的文件名
   file:
-     name: orer_server.log
+     name: order_server.log
   # 设置日志组
   group:
   # 自定义组名，设置当前组中所包含的包
@@ -44,6 +44,19 @@ logging:
 # pattern:
   # console: "%d %clr(%p) --- [%16t] %clr(%-40.40c){cyan} : %m %n"
 
+
+# 配置负载均衡规则
+#userservice:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+ribbon:
+  eager-load:
+    # 开启饥饿加载
+    enabled: true
+    # 指定对 userservice 这个服务饥饿加载
+    clients: userservice
 
 
 server:
