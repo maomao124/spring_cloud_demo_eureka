@@ -45,6 +45,11 @@ logging:
   # console: "%d %clr(%p) --- [%16t] %clr(%-40.40c){cyan} : %m %n"
 
 
+# 配置负载均衡规则
+#userservice:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
 
 server:
   port: 8081
